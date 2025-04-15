@@ -75,11 +75,11 @@ menu {
 
   /* 导航栏的按钮样式 */
   .header-link-active {
-    @apply underline underline-offset-4 decoration-wavy decoration-skin-active;
+    @apply underline underline-offset-4 decoration-skin-active;
   }
 
   .header-link-hover {
-    @apply underline underline-offset-4 decoration-wavy decoration-skin-base;
+    @apply underline underline-offset-4 decoration-skin-base;
   }
 
   .header-btn {

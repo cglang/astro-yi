@@ -1,7 +1,7 @@
 // Place any global data in this file.
 // You can import this data from anywhere in your site by using the `import` keyword.
 
-import type {AnalyticsConfig} from "./types/analyticsTypes"
+import type { AnalyticsConfig } from "./types/analyticsTypes";
 
 /**
  * title {string} website title
@@ -23,21 +23,21 @@ import type {AnalyticsConfig} from "./types/analyticsTypes"
  *    All tags will be displayed in single page "/tags".
  */
 export const site = {
-  title: 'Astro Theme Yi', // required
-  favicon: '/favicon.svg', // required
-  description: 'Welcome to my independent blog website! ',
+  title: "亮姥爷的博客", // required
+  favicon: "/favicon.svg", // required
+  description: "Welcome to my independent blog website! ",
   author: "Astro-Yi", // required
-  avatar: '/avatar.png', // required
-  url: 'https://astro-yi-nu.vercel.app', // required
-  baseUrl: '', // When using GitHubPages, you must enter the repository name startWith '/'. e.g. '/astro-blog'
-  motto: 'Actions speak louder than words.',
+  avatar: "/avatar.png", // required
+  url: "https://astro-yi-nu.vercel.app", // required
+  baseUrl: "", // When using GitHubPages, you must enter the repository name startWith '/'. e.g. '/astro-blog'
+  motto: "Actions speak louder than words.",
   recentBlogSize: 5,
   archivePageSize: 25,
   postPageSize: 10,
   feedPageSize: 20,
-  beian: '',
+  beian: "",
   asideTagsMaxSize: 0,
-}
+};
 
 /**
  * busuanzi {boolean} link: https://busuanzi.ibruce.info/
@@ -49,14 +49,14 @@ export const site = {
  * memosPageSize {number} 10
  */
 export const config = {
-  lang: 'en', // en | zh-cn | zh-Hant | cs
+  lang: "zh-cn", // en | zh-cn | zh-Hant | cs
   codeFoldingStartLines: 16, // Need to re-run the project to take effect
 
   // memos config
-  memosUrl: '', // https://xxxx.xxx.xx
-  memosUsername: '', // login name
+  memosUrl: "", // https://xxxx.xxx.xx
+  memosUsername: "", // login name
   memosPageSize: 10, // number
-}
+};
 
 /**
  * Navigator
@@ -67,85 +67,64 @@ export const config = {
  */
 export const categories = [
   {
-    name: "Blog",
+    name: "博客",
     iconClass: "ri-draft-line",
     href: "/blog/1",
   },
   {
-    name: "Feed",
-    iconClass: "ri-lightbulb-flash-line",
-    href: "/feed/1",
-  },
-  // {
-  //   name: "Memos",
-  //   iconClass: "ri-quill-pen-line",
-  //   href: "/memos",
-  // },
-  {
-    name: "Archive",
+    name: "归档",
     iconClass: "ri-archive-line",
     href: "/archive/1",
   },
   {
-    name: "Message",
-    iconClass: "ri-chat-1-line",
-    href: "/message",
-  },
-  {
-    name: "Search",
+    name: "搜索",
     iconClass: "ri-search-line",
     href: "/search",
   },
   {
-    name: "More",
+    name: "更多",
     iconClass: "ri-more-fill",
     href: "javascript:void(0);",
     children: [
       {
-        name: 'About',
-        iconClass: 'ri-information-line',
-        href: '/about',
-      },
-      {
-        name: 'Friends',
-        iconClass: 'ri-user-5-line',
-        href: '/friends',
-        target: '_self',
-      },
-    ]
-  }
-]
+        name: "关于",
+        iconClass: "ri-information-line",
+        href: "/about",
+      }
+    ],
+  },
+];
 
 /**
  * Personal link address
  */
 export const infoLinks = [
   {
-    icon: 'ri-telegram-fill',
-    name: 'telegram',
-    outlink: '',
+    icon: "ri-telegram-fill",
+    name: "telegram",
+    outlink: "",
   },
   {
-    icon: 'ri-twitter-fill',
-    name: 'twitter',
-    outlink: '',
+    icon: "ri-twitter-fill",
+    name: "twitter",
+    outlink: "",
   },
   {
-    icon: 'ri-instagram-fill',
-    name: 'instagram',
-    outlink: '',
+    icon: "ri-instagram-fill",
+    name: "instagram",
+    outlink: "",
   },
   {
-    icon: 'ri-github-fill',
-    name: 'github',
-    outlink: 'https://github.com/cirry/astro-yi',
+    icon: "ri-github-fill",
+    name: "github",
+    outlink: "https://github.com/cirry/astro-yi",
   },
   {
-    icon: 'ri-rss-fill',
-    name: 'rss',
-    outlink: '',
-  }
-]
+    icon: "ri-rss-fill",
+    name: "rss",
+    outlink: "",
+  },
+];
 
 /**
  * donate
@@ -161,7 +140,7 @@ export const donate = {
   wechatQRCode: "/WeChatQR.png",
   alipayQRCode: "/AliPayQR.png",
   paypalUrl: "https://paypal.me/xxxxxxxxxx",
-}
+};
 
 /**
  * Friendship Links Page
@@ -170,15 +149,14 @@ export const donate = {
  * avatar {string}
  * description {string}
  */
-export const friendshipLinks =
-  [
-    // {
-    //   name: "Cirry's Blog",
-    //   url: 'https://cirry.cn',
-    //   avatar: "https://cirry.cn/avatar.png",
-    //   description: '前端开发的日常'
-    // },
-  ]
+export const friendshipLinks = [
+  // {
+  //   name: "Cirry's Blog",
+  //   url: 'https://cirry.cn',
+  //   avatar: "https://cirry.cn/avatar.png",
+  //   description: '前端开发的日常'
+  // },
+];
 
 /**
  * Comment Feature
@@ -196,37 +174,37 @@ export const friendshipLinks =
  */
 export const comment = {
   enable: false,
-  type: 'giscus', // waline | giscus,
+  type: "giscus", // waline | giscus,
   walineConfig: {
     serverUrl: "",
-    lang: 'en',
+    lang: "en",
     pageSize: 20,
-    wordLimit: '',
+    wordLimit: "",
     count: 5,
     pageview: true,
     reaction: true,
     requiredMeta: ["nick", "mail"],
-    whiteList: ['/message/', '/friends/'],
+    whiteList: ["/message/", "/friends/"],
   },
 
   // giscus config
   giscusConfig: {
-    'data-repo': "",
-    'data-repo-id': "",
-    'data-category': "",
-    'data-category-id': "",
-    'data-mapping': "",
-    'data-strict': "",
-    'data-reactions-enabled': "",
-    'data-emit-metadata': "",
-    'data-input-position': "",
-    'data-theme': "",
-    'data-lang': "",
-    'crossorigin': "",
-  }
+    "data-repo": "",
+    "data-repo-id": "",
+    "data-category": "",
+    "data-category-id": "",
+    "data-mapping": "",
+    "data-strict": "",
+    "data-reactions-enabled": "",
+    "data-emit-metadata": "",
+    "data-input-position": "",
+    "data-theme": "",
+    "data-lang": "",
+    crossorigin: "",
+  },
 
   //
-}
+};
 
 /**
  * Analytics Feature Configuration
@@ -239,11 +217,11 @@ export const analytics: AnalyticsConfig = {
   umamiConfig: {
     enable: false,
     id: "",
-    url: ""
+    url: "",
   },
   gaConfig: {
     enable: false,
-    id: ""
+    id: "",
   },
   busuanzi: false,
 };
