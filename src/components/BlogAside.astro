@@ -1,27 +1,27 @@
 ---
 import CommentAside from "@/components/CommentAside.astro";
-import {comment} from "@/consts";
-import {getCollectionByName} from "@/utils/getCollectionByName";
+import { comment } from "@/consts";
+import { getCollectionByName } from "@/utils/getCollectionByName";
 import getUniqueTags from "@/utils/getUniqueTags";
 import getCountByCategory from "@/utils/getCountByCategory";
-import {sortPostsByDate} from "@/utils/sortPostsByDate";
-import {site} from '@/consts'
-import {t} from '@/i18n/utils'
+import { sortPostsByDate } from "@/utils/sortPostsByDate";
+import { site } from "@/consts";
+import { t } from "@/i18n/utils";
 import getUrl from "@/utils/getUrl";
-const blogs = await getCollectionByName('blog')
+const blogs = await getCollectionByName("blog");
 let tagArr = getUniqueTags(blogs);
-if(site.asideTagsMaxSize > 0)
-  tagArr = tagArr.slice(0, site.asideTagsMaxSize)
+if (site.asideTagsMaxSize > 0) tagArr = tagArr.slice(0, site.asideTagsMaxSize);
 let categoryCount = getCountByCategory(blogs);
 let sortPosts = await sortPostsByDate(blogs);
 let resultPosts = sortPosts.splice(0, site.recentBlogSize);
 ---
 
-<div>
+<div class="bd-solid-1 p-2">
   {
     Object.keys(categoryCount).length > 0 && (
       <div class="aside-widget">
-        <i class="ri-folder-3-line menu-icon"/>{t('sidebar.categories')}
+        <i class="ri-folder-3-line menu-icon" />
+        {t("sidebar.categories")}
       </div>
     )
   }
@@ -32,40 +32,57 @@ let resultPosts = sortPosts.splice(0, site.recentBlogSize);
         title={category + " (" + categoryCount[category] + ")"}
         href={getUrl("/category/") + category}
       >
-        {(category === 'uncategorized' ? t('sidebar.uncategorized') : category) + " (" + categoryCount[category] + ")"}
+        {(category === "uncategorized"
+          ? t("sidebar.uncategorized")
+          : category) +
+          " (" +
+          categoryCount[category] +
+          ")"}
       </a>
     ))
   }
 </div>
-<div>
+
+<div class="bd-solid-1 p-2">
   {
     tagArr.length > 0 && (
       <div class="aside-widget">
-        <i class="ri-hashtag menu-icon"/>
-        {t('sidebar.tags')}
+        <i class="ri-hashtag menu-icon" />
+        {t("sidebar.tags")}
       </div>
     )
   }
   <div class="flex flex-wrap">
     {
       tagArr &&
-      tagArr.map((tag) =>
-        <a class="inline-block truncate m-1 border p-1 text-sm rounded hover:text-skin-active" title={tag} href={getUrl("/tags/") + tag}>{tag}</a>
-      )
+        tagArr.map((tag) => (
+          <a
+            class="inline-block truncate m-1 border p-1 text-sm rounded hover:text-skin-active"
+            title={tag}
+            href={getUrl("/tags/") + tag}
+          >
+            {tag}
+          </a>
+        ))
     }
     {
-      tagArr &&
-      site.asideTagsMaxSize > 0 &&
-      (
-        <a class="inline-block truncate m-1 border p-1 text-sm rounded hover:text-skin-active" title={t('more')} href={getUrl("/tags")}>{t('more')} »</a>
+      tagArr && site.asideTagsMaxSize > 0 && (
+        <a
+          class="inline-block truncate m-1 border p-1 text-sm rounded hover:text-skin-active"
+          title={t("more")}
+          href={getUrl("/tags")}
+        >
+          {t("more")} »
+        </a>
       )
     }
   </div>
 </div>
 
-<div>
+<div class="bd-solid-1 p-2">
   <div class="aside-widget">
-    <i class="ri-file-line menu-icon"></i> {t('sidebar.recentArticle')}
+    <i class="ri-file-line menu-icon"></i>
+    {t("sidebar.recentArticle")}
   </div>
   <div class="flex flex-col">
     {
@@ -82,4 +99,4 @@ let resultPosts = sortPosts.splice(0, site.recentBlogSize);
   </div>
 </div>
 
-{comment.enable && comment.type === "waline" && <CommentAside/>}
+{comment.enable && comment.type === "waline" && <CommentAside />}

@@ -1,21 +1,20 @@
 ---
-import PostViewTitle from '@/components/PostViewTitle.astro'
+import PostViewTitle from "@/components/PostViewTitle.astro";
 import getUrl from "@/utils/getUrl";
-const {blog} = Astro.props;
-const {data, slug} = blog
+const { blog } = Astro.props;
+const { data, slug } = blog;
 ---
 
-<div class="my-5 first:mt-0">
-  <PostViewTitle
-    slug={getUrl("/blog/") + slug}
-    {...data}
-  >
-  </PostViewTitle>
-  <p class="break-all text-skin-base line-clamp-3">
-    {
-      data.description ? data.description : ''
-    }
+<style>
+  .article {
+    margin-bottom: 10px;
+    padding: 10px;
+  }
+</style>
+<div class="article bd-solid-1">
+  <PostViewTitle slug={getUrl("/blog/") + slug} {...data} />
+  <p class="break-all">
+    {data.description ? data.description : ""}
   </p>
 </div>
-<div class="divider-horizontal-mini"></div>
-
+<!-- <div class="divider-horizontal-mini"></div> -->

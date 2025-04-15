@@ -30,7 +30,7 @@ export const site = {
   avatar: "/avatar.png", // required
   url: "https://astro-yi-nu.vercel.app", // required
   baseUrl: "", // When using GitHubPages, you must enter the repository name startWith '/'. e.g. '/astro-blog'
-  motto: "Actions speak louder than words.",
+  motto: "人应当是有理想的.",
   recentBlogSize: 5,
   archivePageSize: 25,
   postPageSize: 10,
@@ -100,29 +100,14 @@ export const categories = [
  */
 export const infoLinks = [
   {
-    icon: "ri-telegram-fill",
-    name: "telegram",
-    outlink: "",
-  },
-  {
-    icon: "ri-twitter-fill",
-    name: "twitter",
-    outlink: "",
-  },
-  {
-    icon: "ri-instagram-fill",
-    name: "instagram",
-    outlink: "",
-  },
-  {
     icon: "ri-github-fill",
     name: "github",
-    outlink: "https://github.com/cirry/astro-yi",
+    outlink: "https://github.com/cglang",
   },
   {
     icon: "ri-rss-fill",
     name: "rss",
-    outlink: "",
+    outlink: "/rss.xml",
   },
 ];
 
