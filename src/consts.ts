@@ -72,6 +72,11 @@ export const categories = [
     href: "/blog/1",
   },
   {
+    name: "随笔",
+    iconClass: "ri-lightbulb-flash-line",
+    href: "/essay/1",
+  },
+  {
     name: "归档",
     iconClass: "ri-archive-line",
     href: "/archive/1",
@@ -90,7 +95,7 @@ export const categories = [
         name: "关于",
         iconClass: "ri-information-line",
         href: "/about",
-      }
+      },
     ],
   },
 ];
