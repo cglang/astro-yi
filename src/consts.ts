@@ -41,7 +41,6 @@ export const site = {
 
 /**
  * busuanzi {boolean} link: https://busuanzi.ibruce.info/
- * lang {string} Default website language
  * codeFoldingStartLines {number}
  * ga {string|false}
  * memosUrl {string} memos server url
@@ -49,9 +48,8 @@ export const site = {
  * memosPageSize {number} 10
  */
 export const config = {
-  lang: "zh-cn", // en | zh-cn | zh-Hant | cs
-  codeFoldingStartLines: 16, // Need to re-run the project to take effect
-
+  lang: "zh-cn", // en | zh-cn | zh-Hant | cs  网站默认语言
+  codeFoldingStartLines: 16, // 代码折叠起始行数(需要重新运行项目以使更改生效)
   // memos config
   memosUrl: "", // https://xxxx.xxx.xx
   memosUsername: "", // login name
@@ -59,11 +57,11 @@ export const config = {
 };
 
 /**
- * Navigator
- * name {string}
- * iconClass {string} icon style
- * href {string}  link url
- * target {string} optional "_self|_blank" open in current window / open in new window
+ * 导航项
+ * name {string} 名称
+ * iconClass {string} 图标样式类名
+ * href {string} 链接地址
+ * target {string} 可选值 "_self|_blank"，分别表示在当前窗口或新窗口打开
  */
 export const categories = [
   {
@@ -80,6 +78,11 @@ export const categories = [
     name: "归档",
     iconClass: "ri-archive-line",
     href: "/archive/1",
+  },
+  {
+    name: "导航",
+    iconClass: "ri-archive-line",
+    href: "/navigation",
   },
   {
     name: "搜索",

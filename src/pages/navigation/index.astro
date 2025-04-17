@@ -1,0 +1,83 @@
+---
+import IndexPage from "@/layouts/IndexPage.astro";
+const bookmarks = [
+  { name: "GitHub", url: "https://github.com" },
+  { name: "MDN Web Docs", url: "https://developer.mozilla.org" },
+  { name: "Astro 官方文档", url: "https://docs.astro.build" },
+  { name: "Stack Overflow", url: "https://stackoverflow.com" },
+];
+---
+
+<style>
+  .container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background: #ffffff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+  }
+
+  .title {
+    font-size: 2rem;
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .bookmark-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .bookmark-item {
+    background: #f4f4f9;
+    padding: 10px 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition:
+      transform 0.2s ease,
+      box-shadow 0.2s ease;
+  }
+
+  .bookmark-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  .bookmark-link {
+    text-decoration: none;
+    color: #2d6ef5;
+    font-weight: bold;
+    transition: color 0.3s ease;
+  }
+
+  .bookmark-link:hover {
+    color: #1a4bb8;
+  }
+</style>
+<IndexPage>
+  <div class="container">
+    <h1 class="title">我的收藏</h1>
+    <ul class="bookmark-list">
+      {
+        bookmarks.map((bookmark) => (
+          <li class="bookmark-item">
+            <a
+              class="bookmark-link"
+              href={bookmark.url}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {bookmark.name}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</IndexPage>

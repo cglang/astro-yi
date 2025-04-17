@@ -1,11 +1,11 @@
 ---
 import IndexPage from "@/layouts/IndexPage.astro";
 const posts = Object.values(import.meta.glob("./about.md", { eager: true }));
-let {Content, frontmatter} = posts[0];
+let { Content, frontmatter } = posts[0] as { Content: any; frontmatter: any };
 ---
 
 <IndexPage frontmatter={frontmatter}>
   <article class="markdown-body">
-    <Content/>
+    <Content />
   </article>
 </IndexPage>
